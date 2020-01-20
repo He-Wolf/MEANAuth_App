@@ -1,0 +1,2 @@
+initialize node.js project command: "npm init" and add dependencies, then "npm install"
+restart app when change: "nodemon"
