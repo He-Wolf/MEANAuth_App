@@ -11,3 +11,4 @@ frontend - Angular: |
 - in angular.json we need to change the output folder to to folder public
 - ng serve command to run Angular app
 - component generation in the destination folder: ng g component "component name"
+- service generation in the destination folder: ng g service "service name"
