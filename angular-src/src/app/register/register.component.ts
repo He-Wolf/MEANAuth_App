@@ -13,20 +13,12 @@ export class RegisterComponent implements OnInit {
   
   model = new User("", "", "", "");
 
-  /*
-  submitted = false;
-
-  onSubmit() {
-    this.submitted = true;
-    console.log(JSON.stringify(this.model));
-  }
-  */
-
   onSubmit() {
     this.authService
     .registerUser(this.model)
     .subscribe(res => {
       if(res.success) {
+        console.log(res);
         console.log("User registered successfully");
         this.router.navigate(['/login']);
       }
