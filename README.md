@@ -1,7 +1,7 @@
 # MEANAuthApp
 simple MEAN stack web app project with JWT authentication
 
-- MongoDB (Mongoose)
-- node.js (Express)
-- Angular 8 (Typescript)
-- Bootstrap 4
+- MongoDB (Mongoose) noSQL database
+- node.js (Express) RESTful API
+- Angular 8 (Typescript) SPA
+- Bootstrap 4 style
