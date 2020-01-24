@@ -13,3 +13,4 @@ frontend - Angular: |
 - component generation in the destination folder: ng g component "component name"
 - service generation in the destination folder: ng g service "service name"
 - class generation in the destination folder: ng g class "class name"
+- interface generation in the destination folder: ng g interface "interface name"

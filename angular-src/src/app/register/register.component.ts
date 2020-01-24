@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,14 +13,34 @@ export class RegisterComponent implements OnInit {
   
   model = new User("", "", "", "");
 
+  /*
   submitted = false;
 
   onSubmit() {
     this.submitted = true;
     console.log(JSON.stringify(this.model));
   }
+  */
 
-  constructor() { }
+  onSubmit() {
+    this.authService
+    .registerUser(this.model)
+    .subscribe(res => {
+      if(res.success) {
+        console.log("User registered successfully");
+        this.router.navigate(['/login']);
+      }
+      else {
+        console.log("Something went wrong");
+        this.router.navigate(['/register']);
+      }
+    });
+  }
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() { }
 }
