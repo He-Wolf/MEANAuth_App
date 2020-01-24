@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   
   model = new User("", "", "", "");
 
-  onSubmit() {
+  onRegisterSubmit() {
     this.authService
     .registerUser(this.model)
     .subscribe(res => {
