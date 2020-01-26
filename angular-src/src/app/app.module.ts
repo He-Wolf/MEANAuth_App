@@ -15,13 +15,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'profile', component: ProfileComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
