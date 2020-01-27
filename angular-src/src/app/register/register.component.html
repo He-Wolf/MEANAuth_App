@@ -31,7 +31,7 @@
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" placeholder="Enter your password" id="password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" [(ngModel)]="model.password" name="password" #password="ngModel">
                     <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                      <div *ngIf="password.errors.required">Password address is required.</div>
+                      <div *ngIf="password.errors.required">Password is required.</div>
                       <div *ngIf="password.errors.pattern">Password shall contain an uppercase, a lowercase and one numerical or special characters. Length must be minimum 8 characters.</div>
                     </div>
                 </div>
