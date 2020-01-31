@@ -20,7 +20,7 @@ router.post("/register", (req, res, next) => {
         }
         else {
             console.log(data);
-            res.json({success: true, msg: "User registered"});
+            res.json({success: true, msg: "User registered."});
         }
     });
 });
@@ -32,7 +32,7 @@ router.post("/authenticate", (req, res, next)=>{
     User.getUserByUsername(username, (err, user) => {
         if(err) throw err;
         if(!user){
-            return res.json({success: false, msg: "User not found"});
+            return res.json({success: false, msg: "User not found."});
         }
         User.comparePassword(password, user.password, (err, isMatch) => {
             if(err) throw err;
@@ -52,7 +52,7 @@ router.post("/authenticate", (req, res, next)=>{
                 });
             }
             else {
-                return res.json({success: false, msg: "Wrong password"});
+                return res.json({success: false, msg: "Wrong password."});
             }
         });
     });

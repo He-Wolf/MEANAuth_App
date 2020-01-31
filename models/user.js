@@ -38,12 +38,12 @@ module.exports.getUserByUsername = function(username, callback){
 module.exports.addUser = function(newUser, callback){
     User.findOne({username : newUser.username}, (err, user) => {
         if(user) {
-            callback(new Error("User already registered"), user);
+            callback(new Error("User already registered."), user);
         }
         else {
             User.findOne({email: newUser.email}, (err, user) => {
                 if(user) {
-                    callback(new Error("Email already registered"), user);
+                    callback(new Error("Email already registered."), user);
                 }
                 else {
                     bcrypt.genSalt(10, (err, salt) => {
