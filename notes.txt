@@ -14,6 +14,9 @@ frontend - Angular: |
 - service generation in the destination folder: ng g service "service name"
 - class generation in the destination folder: ng g class "class name"
 - interface generation in the destination folder: ng g interface "interface name"
+- module generation in the destination folder: ng generate module app-routing --flat --module=app
+  (--flat puts the file in src/app instead of its own folder,
+  --module=app tells the CLI to register it in the imports array of the AppModule)
 
 
 ------------------
@@ -31,3 +34,9 @@ Bootstrap import: |
     "node_modules/popper.js/dist/umd/popper.min.js",
     "node_modules/bootstrap/dist/js/bootstrap.min.js"
   ],
+
+-----------------
+Build and Serve: |
+-----------------
+- ng serve ?--prod?
+- ng build --prod

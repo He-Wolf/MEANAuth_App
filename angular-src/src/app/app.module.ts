@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
@@ -16,15 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 import { AuthService } from './auth.service';
+import { AppRoutingModule } from './app-routing.module';
 import { AuthGuardService } from './auth-guard.service';
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
-];
 
 @NgModule({
   declarations: [
@@ -42,8 +34,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
