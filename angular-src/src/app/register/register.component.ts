@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -14,8 +14,14 @@ export class RegisterComponent implements OnInit {
   
   model = new User("", "", "", "");
 
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private flashMessagesService: FlashMessagesService
+  ) { }
+
   onRegisterSubmit() {
-    this.authService
+    this.userService
     .registerUser(this.model)
     .subscribe(res => {
       if(res.success) {
@@ -32,12 +38,6 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
-
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private flashMessagesService: FlashMessagesService
-  ) { }
 
   ngOnInit() { }
 }

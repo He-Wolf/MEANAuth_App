@@ -22,6 +22,7 @@ const UserSchema = mongoose.Schema({
 const User = module.exports = mongoose.model("User", UserSchema);
 
 module.exports.getUserById = function(id, callback){
+    console.log(id);
     User.findOne(id, callback);
 }
 

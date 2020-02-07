@@ -1,39 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './user'
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from './user'
+import { LoginData } from './login-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   authToken: any;
-  user: any;
+  loginData: LoginData;
+  user: User;
 
   constructor(private http: HttpClient) {}
 
-  registerUser(user: User): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type':  'application/json',
-    });
-    return this.http.post("http://localhost:3000/users/register", user, {headers: headers});
-  }
-
-  authenticateUser(user: any): Observable<any> {
+  authenticateUser(loginData: LoginData): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type':  'application/json'
     });
-    return this.http.post("http://localhost:3000/users/authenticate", user, {headers: headers});
-  }
-
-  getProfile(): Observable<any> {
-    this.loadToken();
-    const headers = new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': this.authToken
-    });
-    return this.http.get("http://localhost:3000/users/profile", {headers: headers});
+    return this.http.post("http://localhost:3000/users/authenticate", loginData, {headers: headers});
   }
 
   storeUserData(token, user) {
@@ -41,6 +27,12 @@ export class AuthService {
     localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  logout() {
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
   }
 
   loadToken() {
@@ -51,11 +43,5 @@ export class AuthService {
     const helper = new JwtHelperService();
     const isNotExpired = !helper.isTokenExpired(this.authToken);
     return isNotExpired;
-  }
-
-  logout() {
-    this.authToken = null;
-    this.user = null;
-    localStorage.clear();
   }
 }

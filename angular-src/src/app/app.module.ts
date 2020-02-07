@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthService } from './auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuardService } from './auth-guard.service';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,11 @@ import { AuthGuardService } from './auth-guard.service';
     FlashMessagesModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [
+    AuthService,
+    AuthGuardService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

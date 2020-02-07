@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { LoginData } from '../login-data';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class LoginComponent implements OnInit {
 
-  username: String;
-  password: String;
+  loginData = new LoginData("","");
 
   constructor(
     private authService: AuthService,
@@ -23,12 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    const user= {
-      username: this.username,
-      password: this.password
-    }
+    const loginData = new LoginData(this.loginData.username, this.loginData.password);
     
-    this.authService.authenticateUser(user).subscribe(res => {
+    this.authService.authenticateUser(loginData).subscribe(res => {
       if(res.succes) {
         this.authService.storeUserData(res.token, res.user);
         //console.log('You are now logged in.');
