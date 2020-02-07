@@ -9,7 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from './_services/auth-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

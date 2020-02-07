@@ -14,10 +14,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './_services/auth.service';
+import { AuthGuardService } from './_services/auth-guard.service';
+import { UserService } from './_services/user.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
-import { AuthGuardService } from './auth-guard.service';
-import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
