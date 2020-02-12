@@ -15,11 +15,9 @@ router.post("/register", (req, res, next) => {
 
     User.addUser(newUser, (err, data)=> {
         if(err){
-            console.log(err.message, data);
             res.json({success: false, msg: err.message});
         }
         else {
-            console.log(data);
             res.json({success: true, msg: "User registered."});
         }
     });
@@ -40,7 +38,6 @@ router.post("/authenticate", (req, res, next)=>{
                 const token = jwt.sign(user.toJSON(), config.secret, {
                     expiresIn: 604800,
                 });
-                console.log(user._id, user.name, user.username, user.email);
                 res.json({
                     succes: true,
                     token: token,
@@ -60,7 +57,6 @@ router.post("/authenticate", (req, res, next)=>{
 });
 
 router.get("/profile", passport.authenticate("jwt", {session: false}), (req, res, next)=>{
-    console.log(req.user);
     res.json({
         user: req.user
     });

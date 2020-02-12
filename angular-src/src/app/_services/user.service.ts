@@ -20,7 +20,6 @@ export class UserService {
 
   getProfile(): Observable<any> {
     this.authService.loadToken();
-    console.log(this.authService.authToken);
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
       'Authorization': this.authService.authToken
