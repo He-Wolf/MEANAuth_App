@@ -8,7 +8,7 @@ backend - express: |
 --------------------
 frontend - Angular: |
 --------------------
-- in angular.json we need to change the output folder to to folder public
+- in angular.json we need to change the output folder to folder public
 - ng serve ?--prod? command to run Angular app
 - ng build --prod command to build Angular app
 - component generation in the destination folder: ng g component "component name"
