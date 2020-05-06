@@ -1,5 +1,4 @@
 module.exports = {
-    //database: "mongodb://localhost:27017/meanauth",
-    database: "mongodb://database/meanauth",
+    database: process.env.MONGO_URL || "mongodb://localhost:27017/meanauth",
     secret: "mysecret"
 }

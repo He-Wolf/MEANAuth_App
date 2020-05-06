@@ -11,8 +11,12 @@ services:
   build: ./express-server # specify the directory of the Dockerfile
   ports:
   - "3000:3000" #specify ports mapping
+  environment: 
+  - MONGO_URL=mongodb://database/meanauth
   links:
   - database # link this service to the database service
+  depends_on: 
+  - database
  
  database: # name of the third service
   image: mongo # specify image to build container from
