@@ -12,13 +12,15 @@ services:
   ports:
   - "3000:3000" #specify ports mapping
   environment: 
-  - MONGO_URL=mongodb://database/meanauth
+  - MONGO_URL=mongodb://database/meanauth # MongoDB server address as environment variable give to backend
   links:
   - database # link this service to the database service
   depends_on: 
-  - database
+  - database # define dependency
  
  database: # name of the third service
   image: mongo # specify image to build container from
   ports:
   - "27017:27017" # specify port forwarding
+
+# docker-compose up --build
