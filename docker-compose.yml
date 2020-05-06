@@ -3,12 +3,12 @@ version: '3.0' # specify docker-compose version
 # Define the services/ containers to be run
 services:
  angular: # name of the first service
-  build: angular-client # specify the directory of the Dockerfile
+  build: ./angular-client # specify the directory of the Dockerfile
   ports:
   - "4200:4200" # specify port mapping
  
  express: # name of the second service
-  build: express-server # specify the directory of the Dockerfile
+  build: ./express-server # specify the directory of the Dockerfile
   ports:
   - "3000:3000" #specify ports mapping
   links:
