@@ -65,15 +65,19 @@ If any question, please do not hesitate to contact me.
 - open a terminal and navigate to the containing folder
 - write "docker-compose up --build" and press Enter
 ### 5.2. Build and run with SDK <a name="build-and-run-with-sdk"></a>
+
 - download and install node.js, MongoDB
 - clone or download the content of the repository
 
+**MongoDB**
 - check if MongoDB server is running as a service
 
+**Backend**
 - open a terminal and navigate to the folder "express-server"
 - write "npm install" and press Enter
 - after package installation is finished, write "npm start" in the terminal and press Enter
 
+**Frontend**
 - open another terminal and navigate to the folder "angular-client"
 - write "npm install" and press Enter
 - after package installation is finished, write "npm start" in the terminal and press Enter
