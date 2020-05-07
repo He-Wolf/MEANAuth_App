@@ -24,12 +24,12 @@ The API uses:
 - JWT for authentication
 If any question, please do not hesitate to contact me.
 ## 2. Used versions <a name="used-versions"></a>
-1. Frameworks
+**1. Frameworks**
 - Express.js: 4.17.1
 - Angular: 9.1.4
-2. Runtime:
+**2. Runtime:**
 - node.js runtime: 12.16.3
-3. Database:
+**3. Database:**
 - MongoDB: 4.2.6
 ## 3. Used tools <a name="used-tools"></a>
 - Postman for API testing
@@ -38,7 +38,7 @@ If any question, please do not hesitate to contact me.
 - Docker for containerization
 - Windows 10 as OS
 ## 4. Used packages <a name="used-packages"></a>
-1. Backend:
+**1. Backend:**
 - express: 4.17.1,
 - mongoose: 5.8.7,
 - bcryptjs: 2.4.3,
@@ -47,7 +47,7 @@ If any question, please do not hesitate to contact me.
 - body-parser: 1.19.0,
 - passport: 0.4.1,
 - passport-jwt: 4.0.0
-2. Frontend (except Angular packages):
+**2. Frontend (except Angular packages):**
 - @auth0/angular-jwt: 3.0.1,
 - angular2-flash-messages: 3.0.1,
 - bootstrap: 4.4.1,
@@ -71,7 +71,6 @@ If any question, please do not hesitate to contact me.
 - open a terminal and navigate to the folder "express-server"
 - write "npm install" and press Enter
 - after package installation is finished, write "npm start" in the terminal and press Enter
-
 
 - open another terminal and navigate to the folder "angular-client"
 - write "npm install" and press Enter
