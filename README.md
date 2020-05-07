@@ -58,67 +58,54 @@ If any question, please do not hesitate to contact me.
 - zone.js: 0.10.2
 ## 5. How to run the API <a name="how-to-run-the-api"></a>
 ### 5.1. Build and run with Docker <a name="build-and-run-with-docker"></a>
-- download and install Docker
+- download and install Docker and Docker-Compose
 - clone or download the content of the repository
 - open a terminal and navigate to the containing folder
-- write "docker build -t todowebapi:v1 ." and press Enter
-- write "docker run -it --rm -p 5000:5000 todowebapi:v1" and press Enter
+- write "docker-compose up --build" and press Enter
 ### 5.2. Build and run with SDK <a name="build-and-run-with-sdk"></a>
-- download and install .NET Core SDK version v3.1.201 or greater (latest 3.1)
+- download and install node.js, MongoDB
 - clone or download the content of the repository
-- open a terminal and navigate to the containing folder
-- write "dotnet restore" and press Enter
-- write "dotnet run" and press Enter
+
+- check if MongoDB server is running as a service
+
+- open a terminal and navigate to the folder "express-server"
+- write "npm install" and press Enter
+- after package installation is finished, write "npm start" in the terminal and press Enter
+
+
+- open another terminal and navigate to the folder "angular-client"
+- write "npm install" and press Enter
+- after package installation is finished, write "npm start" in the terminal and press Enter
 ### 5.3. Test and stop <a name="test-and-stop"></a>
-- if no error message in the terminal, open your browser (recommended: latest Chrome, Firefox, Safari, Edge Chromium or Chromium) and open: http://localhost:5000/swagger
-- first register a user account, then log in and after that you can manage your TODO items and account
-- after testing go back to the terminal and press "Ctrl+C" to stop the web server
+- if no error message in the terminal, open your browser (recommended: latest Chrome, Firefox, Safari, Edge Chromium or Chromium) and open: http://localhost:4200
+- first register a user account, then log in and after that you can diplay your user data and also log out
+- after testing go back to the terminals and press "Ctrl+C" to stop the the backend and frontend as well
 ## 6. Limitations <a name="limitations"></a>
 ### 6.1. Exception/error handling <a name="exception-error-handling"></a>
-This application needs to be extended with exception handling and more response values. There are some already known issues which may cause error when it is not used correctly. I only tested the app with correct input values.
+This application needs to be extended with exception handling. There are some already known issues which may cause error when it is not used correctly. I only tested the app with correct input values.
 ## 7. Some further development possibilities <a name="some-further-development-possibilities"></a>
-- token refreshing
-- Facebook sign-in
+- add possibility to modify and delete account
+- Facebook authentication
 - adding roles (admin, user)
-- OpenID Connect & IdentityServer4
-- SPA frontend (Blazor webassembly)
-- automated unit and integration tests
 ## 8. Resources <a name="resources"></a>
 There are several online source which I used to create this web app.\
 Including but not limited to:
-- Microsoft:
-	- https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1
-	- https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1
-	- https://docs.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-3.1
-	- https://docs.microsoft.com/en-us/ef/core/
-	- https://docs.microsoft.com/en-us/dotnet/csharp/
+- Angular:
+	- https://angular.io/docs
 - Tutorialspoint:
-	- https://www.tutorialspoint.com/csharp/
-	- https://www.tutorialspoint.com/asp.net_core/
-	- https://www.tutorialspoint.com/asp.net_mvc/index.htm
-	- https://www.tutorialspoint.com/entity_framework/index.htm
-	- https://www.tutorialspoint.com/linq/index.htm
-- TutorialsTeacher:
-	- https://www.tutorialsteacher.com/core
-	- https://www.tutorialsteacher.com/webapi/web-api-tutorials
-	- https://www.tutorialsteacher.com/mvc/asp.net-mvc-tutorials
-	- https://www.tutorialsteacher.com/csharp/csharp-tutorials
-	- https://www.tutorialsteacher.com/linq/linq-tutorials
-	- https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx
-- JWT:
-	- https://medium.com/@ozgurgul/asp-net-core-2-0-webapi-jwt-authentication-with-identity-mysql-3698eeba6ff8
-	- https://dotnetdetail.net/asp-net-core-3-0-web-api-token-based-authentication-example-using-jwt-in-vs2019/
-	- https://code-maze.com/authentication-aspnetcore-jwt-1/
-	- https://fullstackmark.com/post/19/jwt-authentication-flow-with-refresh-tokens-in-aspnet-core-web-api
-	- https://www.c-sharpcorner.com/article/jwt-json-web-token-authentication-in-asp-net-core/
-	- https://www.c-sharpcorner.com/article/asp-net-core-2-0-bearer-authentication/
-	- https://www.blinkingcaret.com/2017/09/06/secure-web-api-in-asp-net-core/
-	- https://salslab.com/a/jwt-authentication-and-authorisation-in-asp-net-core-web-api
-	- https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+	- https://www.tutorialspoint.com/nodejs/index.htm
+	- https://www.tutorialspoint.com/expressjs/
+	- https://www.tutorialspoint.com/mongodb/index.htm
+	- https://www.tutorialspoint.com/bootstrap4/bootstrap4_layout.htm
+	- https://www.tutorialspoint.com/typescript/index.htm
+	- https://www.tutorialspoint.com/angular7/index.htm
+- Traversy Media:
+	- https://www.youtube.com/watch?v=uONz0lEWft0&list=PLillGF-RfqbZMNtaOXJQiDebNXjVapWPZ
 
 Thank to every hero on Stackoverflow and Github who helped me with their comments! (Not all heroes wear capes.)
 
 ## 9. Appendix <a name="appendix"></a>
+
 ### backend - express:
 - initialize node.js project command: "npm init" and add dependencies, then "npm install"
 - restart app when change: "nodemon"
