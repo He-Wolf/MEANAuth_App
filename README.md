@@ -27,8 +27,10 @@ If any question, please do not hesitate to contact me.
 **1. Frameworks**
 - Express.js: 4.17.1
 - Angular: 9.1.4
+
 **2. Runtime:**
 - node.js runtime: 12.16.3
+
 **3. Database:**
 - MongoDB: 4.2.6
 ## 3. Used tools <a name="used-tools"></a>
