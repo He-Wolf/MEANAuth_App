@@ -12,7 +12,6 @@
     6.1. [Exception/error handling](#exception-error-handling)
 7. [Some further development possibilities](#some-further-development-possibilities)
 8. [Resources](#resources)
-9. [Appendix](#appendix)
 
 ## 1. Introduction <a name="introduction"></a>
 This is a basic MEAN stack (MongoDB, Express.js, Angular, Node.js) single-page web application project written in TypeScript. It is a simple user login/account management app with JWT authentication. You can register a new user account with your email address, name and password. After successful registration, you can log in and view your user data. This app was created for learning purpose, but is might be useful as a starting-point for other projects.
@@ -108,37 +107,3 @@ Including but not limited to:
 	- https://www.youtube.com/watch?v=uONz0lEWft0&list=PLillGF-RfqbZMNtaOXJQiDebNXjVapWPZ
 
 Thank to every hero on Stackoverflow and Github who helped me with their comments! (Not all heroes wear capes.)
-
-## 9. Appendix <a name="appendix"></a>
-
-### backend - express:
-- initialize node.js project command: "npm init" and add dependencies, then "npm install"
-- restart app when change: "nodemon"
-
-### frontend - Angular:
-- in angular.json we need to change the output folder to folder public
-- ng serve ?--prod? command to run Angular app
-- ng build --prod command to build Angular app
-- component generation in the destination folder: ng g component "component name"
-- service generation in the destination folder: ng g service "service name"
-- class generation in the destination folder: ng g class "class name"
-- interface generation in the destination folder: ng g interface "interface name"
-- module generation in the destination folder: ng generate module app-routing --flat --module=app
-  (--flat puts the file in src/app instead of its own folder,
-   --module=app tells the CLI to register it in the imports array of the AppModule)
-  
-### Bootstrap import:
-- npm install bootstrap --save
-- npm install jquery --save
-- npm install popper.js --save
-```
-"styles": [   
-    "node_modules/bootstrap/dist/css/bootstrap.min.css",
-    "styles.css"
-  ],
-  "scripts": [  
-    "node_modules/jquery/dist/jquery.min.js",
-    "node_modules/popper.js/dist/umd/popper.min.js",
-    "node_modules/bootstrap/dist/js/bootstrap.min.js"
-  ],
- ```
