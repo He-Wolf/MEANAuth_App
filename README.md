@@ -48,6 +48,7 @@ If any question, please do not hesitate to contact me.
 - body-parser: 1.19.0,
 - passport: 0.4.1,
 - passport-jwt: 4.0.0
+
 **2. Frontend (except Angular packages):**
 - @auth0/angular-jwt: 3.0.1,
 - angular2-flash-messages: 3.0.1,
