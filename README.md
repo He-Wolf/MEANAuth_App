@@ -21,6 +21,7 @@ The API uses:
 - Angular 9 (Typescript) SPA
 - Bootstrap 4 style
 - JWT for authentication
+
 If any question, please do not hesitate to contact me.
 ## 2. Used versions <a name="used-versions"></a>
 **1. Frameworks**
